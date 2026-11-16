@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#09090d">
+  <meta name="description" content="Scarlet — a Roblox development companion workspace.">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="scarlet.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Scarlet</title>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand"><div class="brand-mark">S</div><div><div class="brand-name">SCARLET</div><div class="brand-sub">DEVELOPER WORKSPACE</div></div></div>
+      <span class="status"><i></i> LOCAL MODE</span>
+    </header>
+    <main>
+      <section class="hero">
+        <p class="eyebrow">WELCOME BACK</p>
+        <h1>Build something<br><span>brilliant.</span></h1>
+        <p class="muted">Your compact workspace for Roblox project notes and Lua drafts.</p>
+        <div class="hero-actions"><button class="primary" data-view="editor">Open Code Lab <b>↗</b></button><button class="secondary" data-view="projects">My Projects</button></div>
+      </section>
+      <nav class="tabs" aria-label="Main navigation">
+        <button class="tab active" data-view="home">Overview</button>
+        <button class="tab" data-view="editor">Code Lab</button>
+        <button class="tab" data-view="projects">Projects</button>
+        <button class="tab" data-view="about">About</button>
+      </nav>
+      <section id="home" class="view active">
+        <div class="section-heading"><div><p class="eyebrow">CONTROL ROOM</p><h2>Workspace</h2></div><span class="pill">v1.0</span></div>
+        <div class="cards">
+          <button class="feature-card" data-view="editor"><span class="card-icon">⌘</span><strong>Lua Code Lab</strong><small>Write and save Lua drafts locally.</small><span class="card-arrow">↗</span></button>
+          <button class="feature-card" data-view="projects"><span class="card-icon">▣</span><strong>Project Vault</strong><small>Keep project names and notes together.</small><span class="card-arrow">↗</span></button>
+        </div>
+        <div class="notice"><span class="notice-icon">✦</span><div><strong>Made for your own projects</strong><p>Use this workspace for experiences you own or are authorised to develop. It does not connect to or control other people's games.</p></div></div>
+        <div class="section-heading recent-heading"><div><p class="eyebrow">QUICK STATUS</p><h2>Saved locally</h2></div></div>
+        <p class="muted small">Your drafts and project notes stay in this browser on this device. Export backups regularly.</p>
+      </section>
+      <section id="editor" class="view">
+        <div class="section-heading"><div><p class="eyebrow">SCRIPT WORKSPACE</p><h2>Code Lab</h2></div><span class="pill">LUA DRAFT</span></div>
+        <label class="field-label" for="draftName">Draft name</label><input id="draftName" class="text-input" value="My Lua Draft" maxlength="60">
+        <label class="field-label" for="code">Lua editor</label>
+        <textarea id="code" spellcheck="false" autocapitalize="off" autocomplete="off">-- Scarlet Code Lab
+-- Write Lua for your own Roblox experiences.
+
+local message = "Hello, Scarlet!"
+
+print(message)</textarea>
+        <div class="editor-actions"><button class="primary" id="saveDraft">Save Draft</button><button class="secondary" id="downloadDraft">Export .lua</button></div>
+        <p id="editorStatus" class="muted small" role="status">Drafts are stored on this device only. Code is not executed here.</p>
+      </section>
+      <section id="projects" class="view">
+        <div class="section-heading"><div><p class="eyebrow">YOUR WORK</p><h2>Project Vault</h2></div></div>
+        <label class="field-label" for="projectName">Project name</label><input id="projectName" class="text-input" placeholder="e.g. My Roblox Obby" maxlength="60">
+        <label class="field-label" for="projectNotes">Notes</label><textarea id="projectNotes" class="notes-input" placeholder="What are you building?"></textarea>
+        <button class="primary full" id="addProject">＋ Add Project</button>
+        <div id="projectList" class="project-list"></div>
+        <div class="editor-actions"><button class="secondary" id="exportData">Export Backup</button><label class="secondary import-label">Import Backup<input id="importData" type="file" accept="application/json" hidden></label></div>
+        <p class="muted small">Project data is saved in this browser's local storage.</p>
+      </section>
+      <section id="about" class="view">
+        <div class="section-heading"><div><p class="eyebrow">THE PROJECT</p><h2>About Scarlet</h2></div></div>
+        <div class="about-panel"><div class="big-mark">S</div><h2>SCARLET</h2><p class="muted">A dark, crimson-themed development companion for organising your own Roblox projects and Lua drafts.</p><div class="about-line"><span>Version</span><b>1.0.0</b></div><div class="about-line"><span>Storage</span><b>On this device</b></div><div class="about-line"><span>Script execution</span><b>Disabled</b></div></div>
+      </section>
+    </main>
+    <footer>SCARLET <span>•</span> MADE FOR CREATORS</footer>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
